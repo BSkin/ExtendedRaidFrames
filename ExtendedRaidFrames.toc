@@ -1,0 +1,20 @@
+﻿## Interface: 70000
+## Title: ExtendedRaidFrames
+## Notes: Blizzard Raid Frames with extended functionality
+## Author: Convoke
+## Version: 1.0
+
+## OptionalDeps: LibStub, LibSharedMedia-3.0
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+libs\LibSharedMedia-3.0\lib.xml
+#@end-no-lib-strip@
+
+ExtendedRaidFrames.lua
+OptionsPanel.lua
+functions\CustomUnitFrame_OnEvent.lua
+functions\CustomUnitFrame_UpdateHealthColor.lua
+functions\CustomCompactUnitFrameSetup.lua
+functions\CustomRaidGroup_UpdateLayout.lua
