@@ -13,7 +13,8 @@ libs\LibSharedMedia-3.0\lib.xml
 #@end-no-lib-strip@
 
 ExtendedRaidFrames.lua
-OptionsPanel.lua
+Options.xml
+Options.lua
 functions\CustomUnitFrame_OnEvent.lua
 functions\CustomUnitFrame_UpdateHealthColor.lua
 functions\CustomCompactUnitFrameSetup.lua
