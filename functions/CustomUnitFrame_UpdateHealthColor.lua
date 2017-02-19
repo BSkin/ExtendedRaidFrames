@@ -1,5 +1,3 @@
-Vanilla_CompactUnitFrame_UpdateHealthColor = CompactUnitFrame_UpdateHealthColor;
-
 function CustomUnitFrame_UpdateHealthColor(frame)
 	local r, g, b;
 	if ( not UnitIsConnected(frame.unit) ) then
@@ -61,4 +59,4 @@ function CustomUnitFrame_GetHealthColorFromPercentage(frame)
 	return r, g, b;
 end
 
-CompactUnitFrame_UpdateHealthColor = CustomUnitFrame_UpdateHealthColor
+hooksecurefunc("CompactUnitFrame_UpdateHealthColor", CustomUnitFrame_UpdateHealthColor)
