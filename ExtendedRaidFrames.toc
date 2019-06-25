@@ -1,4 +1,4 @@
-﻿## Interface: 70000
+﻿## Interface: 82000
 ## Title: ExtendedRaidFrames
 ## Notes: Blizzard Raid Frames with extended functionality
 ## Author: Convoke
@@ -15,7 +15,6 @@ libs\LibSharedMedia-3.0\lib.xml
 ExtendedRaidFrames.lua
 Options.xml
 Options.lua
-functions\CustomUnitFrame_OnEvent.lua
-functions\CustomUnitFrame_UpdateHealthColor.lua
+functions\CustomCompactRaidGroup.lua
+functions\CustomCompactUnitFrame.lua
 functions\CustomCompactUnitFrameSetup.lua
-functions\CustomRaidGroup_UpdateLayout.lua

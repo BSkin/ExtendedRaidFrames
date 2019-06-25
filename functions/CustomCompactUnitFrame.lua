@@ -1,4 +1,13 @@
-function CustomUnitFrame_UpdateHealthColor(frame)
+function CustomCompactUnitFrame_OnEvent(self, event, ...)
+	local arg1, arg2, arg3, arg4 = ...;
+	if ( arg1 == self.unit or arg1 == self.displayedUnit ) then
+		if ( event == "UNIT_HEALTH" or event == "UNIT_HEALTH_FREQUENT" ) then
+			CompactUnitFrame_UpdateHealthColor(self);
+		end
+	end
+end
+
+function CustomCompactUnitFrame_UpdateHealthColor(frame)
 	local r, g, b;
 	if ( not UnitIsConnected(frame.unit) ) then
 		--Color it gray
@@ -25,7 +34,7 @@ function CustomUnitFrame_UpdateHealthColor(frame)
 					r, g, b = UnitSelectionColor(frame.unit, frame.optionTable.colorHealthWithExtendedColors);
 				end
 			elseif ( UnitIsFriend("player", frame.unit) ) then
-				r, g, b = CustomUnitFrame_GetHealthColorFromPercentage(frame);
+				r, g, b = getHealthColorFromPercentage(frame);
 			else
 				r, g, b = 1.0, 0.0, 0.0;
 			end
@@ -44,7 +53,7 @@ function CustomUnitFrame_UpdateHealthColor(frame)
 	end
 end
 
-function CustomUnitFrame_GetHealthColorFromPercentage(frame)
+function getHealthColorFromPercentage(frame)
 	local r, g, b;
 
 	local maxR, maxG, maxB = 0.0, 1.0, 0.0;
@@ -59,4 +68,6 @@ function CustomUnitFrame_GetHealthColorFromPercentage(frame)
 	return r, g, b;
 end
 
-hooksecurefunc("CompactUnitFrame_UpdateHealthColor", CustomUnitFrame_UpdateHealthColor)
+
+hooksecurefunc("CompactUnitFrame_OnEvent", CustomCompactUnitFrame_OnEvent)
+hooksecurefunc("CompactUnitFrame_UpdateHealthColor", CustomCompactUnitFrame_UpdateHealthColor)
